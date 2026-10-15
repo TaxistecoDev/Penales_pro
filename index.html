@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penales Pro | Tanda de penales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Penales Pro inicio"><span class="brand-mark">⚽</span><span>PENALES<span class="brand-light">PRO</span><small>LA GLORIA SE DEFINE AQUÍ</small></span></a>
+      <div class="top-pill"><span class="live-dot"></span> MODO TANDA</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CAMPEONATO • FINAL</p>
+        <h1>¿TIENES NERVIOS<br><span>DE ACERO?</span></h1>
+        <p class="intro">Apunta, calcula la potencia y vence al portero. Cada disparo cuenta.</p>
+      </div>
+      <div class="scoreboard" aria-live="polite">
+        <div class="team"><div class="team-badge blue">AZ</div><span>AZULES</span></div>
+        <div class="score"><strong id="goals">0</strong><i>:</i><strong id="saves">0</strong><small>GOLES <b>—</b> ATAJADAS</small></div>
+        <div class="team"><div class="team-badge red">GK</div><span>PORTERO</span></div>
+      </div>
+    </section>
+
+    <section class="game-card">
+      <div class="arena-head"><div><span class="status-dot"></span><span id="status">TU TURNO • ELIGE DÓNDE DISPARAR</span></div><span class="round" id="round">DISPARO 1 / 5</span></div>
+      <div class="field-wrap">
+        <canvas id="game" width="1000" height="560" aria-label="Cancha de fútbol. Haz clic o toca dentro de la portería para apuntar."></canvas>
+        <div class="canvas-hint" id="hint"><span>↗</span> HAZ CLIC EN LA PORTERÍA PARA APUNTAR</div>
+        <div class="flash" id="flash"></div>
+      </div>
+      <div class="controls">
+        <div class="power-control">
+          <div class="control-label"><span>POTENCIA DEL DISPARO</span><strong id="powerLabel">72%</strong></div>
+          <input id="power" type="range" min="25" max="100" value="72" aria-label="Potencia del disparo">
+          <div class="range-labels"><span>COLOCADO</span><span>CAÑONAZO</span></div>
+        </div>
+        <button id="shoot" class="shoot-btn"><span>DISPARAR</span><span class="arrow">↗</span></button>
+      </div>
+      <div class="feedback" id="feedback">Selecciona un punto dentro de la portería para preparar tu tiro.</div>
+    </section>
+
+    <section class="bottom-row">
+      <div class="tip"><span class="tip-icon">✦</span><div><strong>EL CONSEJO DEL ENTRENADOR</strong><p>Los tiros a las esquinas son difíciles de detener, pero requieren precisión.</p></div></div>
+      <div class="stats"><div><small>PRECISIÓN</small><strong id="accuracy">—</strong></div><div><small>RACHA</small><strong id="streak">0</strong></div><div><small>TIROS RESTANTES</small><strong id="remaining">5</strong></div></div>
+    </section>
+    <footer><span>© 2026 PENALES PRO</span><span>HECHO PARA LOS QUE SE ATREVEN <b>●</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
